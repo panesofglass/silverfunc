@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <TargetFramework>.NETCore3.1</TargetFramework>
+    <AzureFunctionsVersion>v3</AzureFunctionsVersion>
+    <RootNamespace>silverfunc</RootNamespace>
+    <Mode>Echoes</Mode>
+    <ProjectGuid>{796792DD-F4C0-484D-9DA7-98D793F081B6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <OutputPath>.\bin\output</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <NuGetReference Include="Microsoft.NET.Sdk.Functions:3.0.1">
+      <Version>3.0.1</Version>
+    </NuGetReference>
+    <Reference Include="Swift">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Echoes">
+      <Private>True</Private>
+    </Reference>
+    <None Include="HttpExample\function.json" LinkBase="HttpExample\">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <FinalOutputFolderOverride>.\HttpExample\</FinalOutputFolderOverride>
+    </None>
+    <None Include="host.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Compile Include="HttpExample.swift" />
+    <Compile Include="Named.swift" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' " />
+  <Import Project="$(MSBuildExtensionsPath)\RemObjects Software\Elements\RemObjects.Elements.Echoes.targets" />
+</Project>

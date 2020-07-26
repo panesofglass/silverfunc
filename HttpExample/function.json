@@ -1,0 +1,16 @@
+﻿{
+  "bindings": [
+    {
+      "type": "httpTrigger",
+      "methods": [
+        "get",
+        "post"
+      ],
+      "authLevel": "function",
+      "name": "req"
+    }
+  ],
+  "disabled": false,
+  "scriptFile": "../silverfunc.dll",
+  "entryPoint": "silverfunc.HttpExample.Run"
+}
