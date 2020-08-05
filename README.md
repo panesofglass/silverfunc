@@ -1,4 +1,4 @@
-# Elements Hydrogene Azure Function Sample
+# Elements Silver Azure Function Sample
 
 ## Dependencies
 
